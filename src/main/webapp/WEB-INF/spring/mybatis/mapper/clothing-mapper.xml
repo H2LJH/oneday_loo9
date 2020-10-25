@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+  
+<mapper namespace="com.biz.oneday.dao.ClothingDAO">
+
+<select id="selectAll" resultType="cloVO">
+		select * from tbl_clothing
+</select>
+
+<select id="findByDetailList" resultType="cloVO">
+	select * from tbl_clothing where io_pname = #{io_pname} AND io_user = #{io_user}
+</select>
+
+<select id="findByClothingList" resultType="cloVO">
+	select DISTINCT io_pname from tbl_clothing where io_user = #{io_user}
+
+</select>
+
+
+<insert id="insert">
+	insert into tbl_clothing
+	(
+		IO_SEQ,   IO_USER, IO_PNAME,
+		IO_INPUT, IO_DATE, IO_TIME,
+		IO_PRICE, IO_QUAN
+	) values (
+		seq_clothing.NEXTVAL, 
+		#{io_user},  #{io_pname},
+		#{io_input}, #{io_date}, 
+		#{io_time},  #{io_price}, 
+		#{io_quan}	
+	)
+</insert>
+
+<delete id="delete">
+	delete from tbl_clothing where io_seq = #{io_seq}
+</delete>
+
+
+</mapper>

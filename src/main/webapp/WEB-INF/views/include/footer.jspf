@@ -1,0 +1,19 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+<c:set var="rootPath" value='${pageContext.request.contextPath}' />
+
+<style>
+footer {
+	margin-top: 15px;
+	width: 80%;
+	height: 10%;
+	background-color: rgb(12, 113, 87); 
+	text-align: center;
+	padding: 15px 8px;
+	color: white;
+}
+</style>
+
+<footer>
+	<h1>H2LJH@Naver.com</h1>
+</footer>

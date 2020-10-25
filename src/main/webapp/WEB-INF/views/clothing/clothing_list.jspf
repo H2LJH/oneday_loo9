@@ -1,0 +1,63 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+	pageEncoding="UTF-8"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+<c:set var="rootPath" value='${pageContext.request.contextPath}' />
+
+
+<script>
+document.addEventListener('DOMContentLoaded', (event) => 
+{
+	let clothing_list = document.getElementsByTagName("tr");
+	
+	  for(let i=0; i<clothing_list.length; ++i)
+	  {
+		  clothing_list[i].onclick = () =>
+	      {
+	    	  let detailPath = clothing_list[i].dataset.p_name;
+	    	  document.location.href = "${rootPath}/clothing/detail/" + detailPath;	
+	      }
+	  }
+});
+</script>
+
+<style>
+	table{
+		flex:1;		
+		border-collapse: collapse;
+	}
+	
+	tr{
+		border-bottom: 1px solid #ccc;
+	}
+	
+	tr:nth-child(0n+1)
+	{
+		background-color: #daf1cd;
+	}
+	
+	tr:hover:nth-child(1n+2){
+		cursor: pointer;
+		background-color: #f5baa0;
+	}
+	td{ text-align: center; }
+	
+	
+    .list_div{
+    	margin: 15px auto;
+    	text-align: center;
+    	padding: 15px 8px;
+    }
+    
+  
+</style>
+<div class ="list_div">
+		매입 매출 관리 페이지
+</div>
+<table>
+<th>상품명</th>
+    <c:forEach items="${CLOTING}" var="clothing">
+    	<tr data-p_name = "${clothing.io_pname}"> 	
+    	    <td>${clothing.io_pname}</td>
+    	</tr>
+   </c:forEach>
+</table>

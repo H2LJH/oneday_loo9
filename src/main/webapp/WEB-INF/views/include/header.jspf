@@ -1,0 +1,25 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+<c:set var="rootPath" value = '${pageContext.request.contextPath}'/>
+<style>
+header{ 
+	margin-bottom:5px; 
+	background-color: rgb(12, 113, 87); 
+	width: 80%; 
+	height:15%; 
+	text-align: center;
+	color: #f9f3f3;
+	text-shadow: 0px -2px #2980B9;
+
+}
+header h1
+{
+	padding: 15px 8px;
+}
+</style>
+
+<header>
+	<h1>LOO9 PROJECT</h1>
+</header>
+<!-- #352819
+#ff8901 -->
